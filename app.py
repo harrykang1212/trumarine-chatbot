@@ -25,7 +25,7 @@ conversation_history = []
 
 # ── Document path ──────────────────────────────────────
 # Place your .docx file in the same folder as this app.py
-DOCX_PATH = os.path.join(os.path.dirname(__file__), "manual.docx")
+DOCX_PATH = os.path.join(os.path.dirname(__file__), "307_Service_Manual_Ed2_Iss2.docx")
 CHROMA_DIR = os.path.join(os.path.dirname(__file__), "chroma_db")
 
 # ── Helper: clean documents ───────────────────────────
