@@ -1,5 +1,14 @@
 anthropic
 flask
 flask-cors
+langchain
+langchain-community
+langchain-huggingface
+langchain-chroma
+sentence-transformers
+chromadb
 python-docx
+unstructured==0.18.15
+pillow
+rank_bm25
 gunicorn
