@@ -21,6 +21,7 @@ index_error = None
 TEXT_PATH = os.path.join(os.path.dirname(__file__), "manual_text.txt")
 
 
+# ── TF-IDF for fast pre-filtering ─────────────────────────
 def tokenize(text):
     return text.lower().split()
 
@@ -37,7 +38,8 @@ def build_tfidf_index(chunks):
     return tfs, df
 
 
-def tfidf_search(query, k=8):
+def tfidf_search(query, k=20):
+    """Fast keyword pre-filter — returns top k chunks."""
     n = len(chunks_store)
     query_tokens = tokenize(query)
     scores = []
@@ -49,7 +51,11 @@ def tfidf_search(query, k=8):
                 score += tf[token] * idf
         scores.append((score, i))
     scores.sort(reverse=True)
-    return [chunks_store[i] for score, i in scores[:k] if score > 0]
+
+    # Return top k — include zero-score chunks too so semantic search
+    # can still find relevant content even if no keywords matched
+    top = [chunks_store[i] for _, i in scores[:k]]
+    return top
 
 
 def build_index():
@@ -78,9 +84,7 @@ def build_index():
 
         print(f"   Split into {len(chunks)} chunks")
 
-        # Build TF-IDF index
         tfs, df = build_tfidf_index(chunks)
-
         chunks_store = chunks
         tfs_store = tfs
         df_store = df
@@ -98,9 +102,10 @@ def build_index():
 threading.Thread(target=build_index, daemon=True).start()
 
 
-def build_context(results, max_chars=3500):
+def build_context(chunks, max_chars=6000):
+    """Join chunks up to max_chars."""
     parts, total = [], 0
-    for t in results:
+    for t in chunks:
         t = t.strip()
         if not t:
             continue
@@ -116,13 +121,24 @@ def build_context(results, max_chars=3500):
 def run_chatbot(query: str) -> str:
     global conversation_history
 
-    results = tfidf_search(query, k=8)
-    context = build_context(results, max_chars=3500)
+    # Step 1: TF-IDF pre-filter — get top 20 candidate chunks
+    candidates = tfidf_search(query, k=20)
+    context = build_context(candidates, max_chars=6000)
 
-    system_prompt = f"""You are TurboAssist, an expert assistant for turbocharger service manuals.
-Answer the user's question using ONLY the reference text below.
-If the answer is not in the text, say you cannot find it in the manual.
-Be concise and practical. Remember the conversation history for context.
+    # Step 2: Claude does semantic understanding on the candidates
+    # This means even if keywords don't match, Claude can find
+    # the meaning e.g. "stationed" → "headquartered"
+    system_prompt = f"""You are TurboAssist, an AI assistant for Tru-Marine — a turbocharger service and supply company.
+
+Your job is to answer customer questions using the reference text below.
+Use semantic understanding — if the customer asks "where is the company stationed"
+and the text says "headquartered in Singapore", understand they mean the same thing.
+
+If the answer is genuinely not in the reference text, say you cannot find it and
+suggest they contact the sales team directly.
+
+Be concise, helpful and professional.
+Remember the conversation history for follow-up questions.
 
 Reference text:
 {context}"""
@@ -140,7 +156,7 @@ Reference text:
         answer = msg.content[0].text.strip()
         while "\n\n\n" in answer:
             answer = answer.replace("\n\n\n", "\n\n")
-        answer = answer or "I couldn't find a clear answer in the manual."
+        answer = answer or "I couldn't find a clear answer. Please contact our sales team."
 
         conversation_history.append({"role": "assistant", "content": answer})
         if len(conversation_history) > 20:
