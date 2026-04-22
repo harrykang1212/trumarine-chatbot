@@ -1463,20 +1463,182 @@ Add these triggers:
 
 “Check service availability”  
 
-Shape 
 
-⚠️ FINAL STRATEGY (VERY IMPORTANT FOR YOU) 
 
-From your experience: 
-👉 Chatbot success = Q&A quality + real questions 
+Ports that Tru-marine support/served:
 
-You should: 
+Guangzhou  
 
-Collect real RFQs  
+Istanbul  
 
-Collect real customer questions  
+Rotterdam  
 
-Feed weekly into chatbot 
+Shanghai  
+
+Singapore  
+
+Weihai  
+
+Zhoushan  
+
+Malaysia – TGS Maritime (Pasir Gudang)  
+
+Spain - Turbo Cadiz SL (Cadiz)  
+
+USA  - Pacific Power (Portland)  
+
+Indonesia – PT Herda Chaya Tehnika & PT Turbo Tech (Batam & Surabaya)  
+
+Philippines – Rurex Fabrication & Trading  
+
+Korea – Yongjin Turbo & Jonghup Maritime Inc (Busan)  
+
+Japan – Kobe Marine, Taiyo Marine & Kobayashi Industries Ltd  
+
+Thailand – Unithai Shipyard  
+
+Taiwan – Jian King Enterprise Co Ltd & ChunHua Turbocharger Services Ltd  
+
+Vietnam – Orient Technical Marine Co Ltd  
+
+Dry Docks World, Dubai  
+
+Albwardy Damen Shipyard, Sharjah  
+
+Dubai Maritime City, Dubai  
+
+Jebel Ali port, Dubai  
+
+Khalifa port, Abu Dhabi  
+
+Hamiriyah port, Dubai  
+
+ADSB, Abu Dhabi  
+
+Musaffah port, Abu Dhabi  
+
+Khalid port, Sharjah  
+
+Hamriyah Free zone port, Sharjah  
+
+Khorfakkan Port / anchorage, Sharjah  
+
+Fujairah port / anchorage, Fujairah  
+
+Mina Saqr port, Ras Al Khaimah(Requires temp. registration)  
+
+Asyad drydocks, Duqm (Will require visa)  
+
+ASRY yard, Bahrain (Will require visa)  
+
+Qatar dry docks (Will require visa)  
+
+Da Lian Port (Liao Ning)  
+
+Ying Kou Port (Liao Ning)  
+
+Jin Zhou Port  (Liao Ning)  
+
+Dan Dong Port (Liao Ning)  
+
+Hu Lu Dao Port (Liao Ning)  
+
+Pan Jin Port  (Liao Ning)  
+
+Qin Huang Dao Port (He Bei)  
+
+Tang Shan Port  (He Bei)     
+
+Tian Jin Port   (Tian Jin)  
+
+Qing Dao Port (Shan Dong)  
+
+Ri Zhao Port (Shan Dong)  
+
+Yan Tai Port (Shan Dong)  
+
+Wei Hai Port (Shan Dong)  
+
+Wei Fang Port (Shan Dong)  
+
+Bin Zhou Port (Shan Dong)  
+
+Dong Ying Port (Shan Dong)      
+
+Lian Yun Gang Port (Jiang Su)  
+
+Yan Cheng Port (Shan Dong)  
+
+Nan Tong Port (Shan Dong)  
+
+Su Zhou Port (Shan Dong)  
+
+Jiang Yin Port (Shan Dong)  
+
+Tai Zhou Port (Shan Dong)  
+
+Nan Jin Port (Shan Dong)  
+
+Zhen Jiang Port (Shan Dong)  
+
+Yang Zhou Port (Shan Dong)  
+
+Chang Zhou Port  (Shan Dong)       
+
+Wai Gao Qiao Port (Shanghai)  
+
+Yang Shan Port  (Shanghai)  
+
+Ning Bo Port (Zhe Jiang)  
+
+ Zhou Shan Port (Zhe Jiang)  
+
+Hang Zhou Port (Zhe Jiang)  
+
+Wen Zhou Port (Zhe Jiang)  
+
+Jia Xing Port (Zhe Jiang)  
+
+Tai Zhou Port  (Zhe Jiang)  
+
+Xia Men Port (Fu Jian)  
+
+FU Zhou Port (Fu Jian)  
+
+Quan Zhou Port (Fu Jian)  
+
+Zhang Zhou Port (Fu Jian)  
+
+Ning De Port (Fu Jian)  
+
+Xiu Yu Port (Fu Jian)  
+
+Guang Zhou Port (Guang Dong)  
+
+Shen Zhen Port (Guang Dong)  
+
+Zhan Jiang Port (Guang Dong)  
+
+Zhong Shan Port (Guang Dong)  
+
+Mao Min Port (Guang Dong)  
+
+Shan Tou Port (Guang Dong)  
+
+Fang Cheng Port (Guang Xi)  
+
+Qin Zhou Port (Guang Xi)  
+
+Bei Hai Port  (Guang Xi)  
+
+Hai Kou Port (Hai Nan)  
+
+San Ya Port (Hai Nan)  
+
+Yang Pu Port (Hai Nan)  
+
+ 
+
 
  
 
